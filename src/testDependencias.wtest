@@ -1,0 +1,37 @@
+import autos.*
+
+
+describe "test De Dependencias"{
+	
+		
+		test"a"{
+			var deporte = new Dependencia(empleados=45)
+			var cultura = new Dependencia(empleados=31)
+			var cachito = new Corsa(color="rojo")
+			var auto1 = new AutosEspeciales (capacidad=5,color="beige",velocidadMaxima=160,peso=1200)
+			
+			deporte.agregarAuto(cachito)
+			deporte.agregarAuto(new Corsa(color="verde"))
+			deporte.agregarAuto(new Corsa(color="azul"))
+			deporte.agregarAuto(new Kwid(tieneGasAdicional=true))
+			deporte.agregarAuto(auto1)
+			cultura.agregarAuto(cachito)
+			cultura.agregarAuto(new Kwid(tieneGasAdicional=true))
+			cultura.agregarAuto(new Kwid(tieneGasAdicional=true))
+			cultura.agregarAuto(new Kwid(tieneGasAdicional=false))
+			trafic.motor(motorPulenta)
+			trafic.interior(interiorPopular)
+			cultura.agregarAuto(trafic)
+		
+			assert.equals(6450,deporte.pesoTotalFlota())
+		
+		}
+	
+	
+			
+	
+}
+
+
+
+
