@@ -74,9 +74,11 @@ Hacer el diagrama de objetos correspondiente a este test.
 ## Etapa 2: modelo de pedidos
 
 Agregar al modelo los **pedidos** de translados que se generan en la municipalidad.  
-Cada pedido especifica: la _distancia_ a recorrer (expresada en kilómetros), el _tiempo máximo_ en que se puede hacer el viaje (expresado en horas), la _cantidad de pasajeros_ a transportar, y también un conjunto de _colores incompatibles_, o sea, que los pasajeros rechazan hacer el viaje en autos de esos colores.  
+Cada pedido especifica: la _distancia_ a recorrer (expresada en kilómetros), el _tiempo máximo_ en que se puede hacer el viaje (expresado en horas), 
+la _cantidad de pasajeros_ a transportar, y también un conjunto de _colores incompatibles_, o sea, que los pasajeros rechazan hacer el viaje en autos de esos colores.  
 La _velocidad requerida_ de un pedido es el resultado de dividir la cantidad de kilómetros por el tiempo máximo.
-P.ej. si para un pedido de un viaje de 480 kilómetros se indica como tiempo máximo 6 horas, entonces la velocidad requerida de este pedido es de 80 kms/hora (480 / 6 = 80).   
+P.ej. si para un pedido de un viaje de 480 kilómetros se indica como tiempo máximo 6 horas, entonces la velocidad requerida de este pedido es de 80 kms/hora 
+(480 / 6 = 80).   
 	
 Agregar la capacidad de preguntar _si un auto puede satisfacer un pedido_, enviándole un mensaje al viaje con el auto como parámetro. 
 
@@ -94,7 +96,8 @@ Armar un test que compruebe esta especificación.
 
 <br>
 
-Además, los objetos que representan pedidos deben entender estos mensajes: `acelerar` disminuye en uno el tiempo máximo (p.ej. lo hace pasar de 8 horas a 7), y `relajar` que lo aumenta en uno (p.ej. lo hace pasar de 8 horas a 9).
+Además, los objetos que representan pedidos deben entender estos mensajes: `acelerar` disminuye en uno el tiempo máximo (p.ej. lo hace pasar de 8 horas a 7), y 
+`relajar` que lo aumenta en uno (p.ej. lo hace pasar de 8 horas a 9).
 
 ## Etapa 3: registro de los pedidos de cada dependencia
 

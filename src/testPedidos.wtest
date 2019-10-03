@@ -1,0 +1,40 @@
+// TDD = test driven development = desarrollo guiado por las pruebas
+
+import autos.*
+
+
+describe "Flota de rodados" {
+	const cachito = new Corsa(color = rojo) 
+	const pedido1 = new Pedidos(
+		distancia = 8, 
+		tiempoMaximo = 2000, 
+		pasajeros = 4, 
+		coloresIncompatibles = #{azul}
+		)
+	
+	test "velocidad requerida" {
+		assert.equals(120, pedido1.velocidadRequerida())
+	}
+	
+	test "cachito puede satisfacer" {
+		assert.that(pedido1.puedeSatisfacerViaje(cachito))
+	}
+	
+	test "cachito no puede satisfacer si se agrega el rojo" {
+		pedido1.coloresIncompatibles().add(rojo)
+		assert.notThat(pedido1.puedeSatisfacerViaje(cachito))
+	}
+	
+	test "cachito no puede satisfacer si acelero dos veces" {
+		2.times { i => pedido1.acelerar() }
+		assert.notThat(pedido1.puedeSatisfacerViaje(cachito))
+	}
+
+	test "nadie lo satisface"{
+		const luis = new Corsa (color = negro)
+		var deporte = new Dependencia(flota = [cachito, luis], empleados = [])
+		deporte.agregarPedido(pedido1) 
+		assert.equals([], deporte.pedidoNoSatisfechos())
+	}
+
+}
